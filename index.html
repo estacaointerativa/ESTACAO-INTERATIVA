@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estações Interativas - Artrópodes</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="navigation">
+      <button id="btn-crustacea" onclick="openTab('crustacea')" class="tab-button active">Ver Crustacea</button>
+      <button id="btn-hexapoda" onclick="openTab('hexapoda')" class="tab-button">Ver Hexapoda</button>
+      <button id="btn-game" onclick="openTab('game')" class="tab-button">Ver Game</button>
+    </div>
+
+    <!-- Crustacea -->
+    <div id="crustacea" class="content active">
+      <!-- Mascote dos Crustáceos -->
+      <div class="mascot mascot-right">
+        <img src="krill.png" alt="Mascote Krill" class="mascot-image">
+      </div>
+
+      <h1 class="title-primary crustacea-title">Filo Crustacea</h1>
+      <div class="intro">
+        <h2 class="title-secondary crustacea-title">Bem-vindo ao mundo dos Crustáceos!</h2>
+        <p>
+          Prepare-se para mergulhar no fascinante universo dos crustáceos, os verdadeiros "super-heróis" aquáticos (e às vezes terrestres)! 
+          Eles são os mestres do exoesqueleto, com armaduras de quitina que fariam qualquer cavaleiro medieval morrer de inveja. 
+          Com suas antenas estilosas e apêndices multifuncionais, esses pequenos (e às vezes grandes) artrópodes dominam os mares, rios e até mesmo o seu jardim!
+        </p>
+        <p>
+          Você sabia que os crustáceos são essenciais para o equilíbrio ecológico? Eles reciclam matéria orgânica, servem de alimento para várias espécies e até ajudam a manter os oceanos limpos. 
+          Sem eles, o mundo seria um lugar muito menos interessante (e muito mais sujo)!
+        </p>
+        <p>
+          Então, venha conhecer de perto camarões, caranguejos, tatuzinhos e até os misteriosos ostracodes. 
+          Descubra como eles vivem, o que comem e por que são tão importantes para o planeta. 
+          Ah, e não se esqueça de testar seus conhecimentos no nosso <strong>Miniquiz</strong> ao final. Vamos lá, aventureiro dos artrópodes!
+        </p>
+        <p>
+          As imagens podem ser ampliadas para melhorar a visualização, e os QR Codes fornecem acesso a estruturas 3D representativas de cada grupo.
+        </p>
+      </div>
+
+      <h2 class="group-title">Classes do Filo Crustacea</h2>
+
+      <div class="group">
+        <h3 class="group-name">Malacostraca (Malacóstracos)</h3>
+        <p><strong>Características:</strong> Corpo dividido em <em>cefalotórax</em> (cabeça + tórax fundidos) e <em>abdômen</em>; 5 pares de patas torácicas.</p>
+        <a href="malacostraca.png" target="_blank">
+          <img src="malacostraca.png" alt="Malacóstracos" class="group-image">
+        </a>
+      </div>
+
+      <div class="group">
+        <h3 class="group-name">Branchiopoda (Branquiópodes)</h3>
+        <p><strong>Características:</strong> Apêndices em forma de folha para natação e respiração.</p>
+        <a href="branchiopoda.jpg" target="_blank">
+          <img src="branchiopoda.jpg" alt="Branquiópodes" class="group-image">
+        </a>
+      </div>
+
+      <div class="group">
+        <h3 class="group-name">Maxillopoda</h3>
+        <p><strong>Características:</strong> Inclui subclasse Copepoda (importantes no plâncton) e subclasse Cirripedia (cracas, sésseis e fixas em rochas).</p>
+        <a href="maxillopoda.jpg" target="_blank">
+          <img src="maxillopoda.jpg" alt="Maxillopoda" class="group-image">
+        </a>
+      </div>
+
+      <div class="group">
+        <h3 class="group-name">Ostracoda</h3>
+        <p><strong>Características:</strong> Microcrustáceos com concha bivalve.</p>
+        <a href="ostracodes.webp" target="_blank">
+          <img src="ostracodes.webp" alt="Ostracoda" class="group-image">
+        </a>
+      </div>
+
+      <h2 class="group-title">Morfologia</h2>
+      <div class="morfologia-section">
+        <ul>
+          <li><strong>Exoesqueleto:</strong> 
+            O exoesqueleto dos crustáceos é composto por quitina, uma substância rígida que pode ser calcificada, tornando-o ainda mais resistente. 
+            Ele funciona como uma armadura protetora, mas também precisa ser trocado periodicamente em um processo chamado <em>ecdise</em>, para permitir o crescimento do animal.
+          </li>
+          <li><strong>Apêndices:</strong> 
+            Os crustáceos possuem apêndices birremes, ou seja, divididos em dois ramos. Esses apêndices são altamente versáteis e podem ser usados para locomoção, alimentação, respiração e até mesmo para defesa.
+          </li>
+          <li><strong>Antenas:</strong> 
+            Eles possuem dois pares de antenas: as antênulas (menores) e as antenas (maiores). Esses órgãos sensoriais são essenciais para detectar mudanças no ambiente, localizar alimentos e até mesmo se comunicar.
+          </li>
+          <li><strong>Pernas:</strong> 
+            As pernas dos crustáceos são adaptadas para diferentes funções, dependendo da espécie. Algumas são usadas para caminhar, enquanto outras são especializadas para nadar ou capturar alimentos. 
+            Por exemplo, os caranguejos possuem pernas robustas para locomoção terrestre, enquanto os camarões têm pernas mais delicadas para nadar e se alimentar.
+          </li>
+          <li><strong>Propódeo:</strong> 
+            O propódeo é a parte final de algumas pernas dos crustáceos, especialmente em espécies aquáticas. Ele pode ser adaptado para agarrar superfícies, cavar ou até mesmo para defesa. 
+            Em algumas espécies, como os caranguejos, o propódeo é modificado para facilitar a locomoção em terrenos irregulares ou para segurar objetos.
+          </li>
+          <li><strong>Divisão corporal:</strong>
+            O corpo dos crustáceos é segmentado e dividido em três partes principais:
+            <ul>
+              <li><strong>Cabeça:</strong> 
+                Contém cinco segmentos que incluem os olhos compostos, as antênulas, as antenas, as mandíbulas e as maxilas.
+              </li>
+              <li><strong>Tórax:</strong> Geralmente possui apêndices locomotores, como pernas e nadadeiras.</li>
+              <li><strong>Abdômen:</strong> Pode conter apêndices especializados, como pleópodes (usados para natação ou reprodução).</li>
+            </ul>
+          </li>
+        </ul>
+        <a href="morfologia.jpg" target="_blank">
+          <img src="morfologia.jpg" alt="Morfologia dos crustáceos" class="morfologia-image">
+        </a>
+      </div>
+
+      <h2 class="group-title">Ecologia</h2>
+      <ul>
+        <li><strong>Habitats:</strong>
+          <ul>
+            <li><strong>Aquáticos:</strong> Marinhos e de água doce (90% das espécies).</li>
+            <li><strong>Terrestres:</strong> Tatuzinhos (necessitam de umidade para sobreviver).</li>
+          </ul>
+        </li>
+        <li><strong>Funções ecológicas:</strong>
+          <ul>
+            <li><strong>Decompositores:</strong> Reciclam matéria orgânica, ajudando a manter o equilíbrio dos ecossistemas.</li>
+            <li><strong>Base da cadeia alimentar:</strong> Muitos crustáceos, como o krill e os copépodes, são fundamentais na dieta de peixes, baleias e outros animais marinhos.</li>
+            <li><strong>Filtradores:</strong> Algumas espécies, como os cirrípedes (cracas), filtram partículas suspensas na água, contribuindo para a limpeza dos ecossistemas aquáticos.</li>
+            <li><strong>Engenheiros do ecossistema:</strong> Crustáceos como os caranguejos ajudam a arejar o solo e reciclar nutrientes ao cavar tocas.</li>
+          </ul>
+        </li>
+        <li><strong>Interações ecológicas:</strong>
+          <ul>
+            <li><strong>Simbiônticos:</strong> Algumas espécies vivem em simbiose com outros organismos, como os camarões limpadores que removem parasitas de peixes.</li>
+            <li><strong>Predadores e presas:</strong> Crustáceos desempenham papéis duplos, sendo predadores de pequenos organismos e presas de animais maiores.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2 class="group-title">Resumo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Classe</th>
+            <th>Características</th>
+            <th>Exemplos</th>
+            <th>Habitat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Malacostraca</td>
+            <td>Corpo dividido em cefalotórax e abdômen; 5 pares de patas torácicas</td>
+            <td>Camarão, lagosta, caranguejo</td>
+            <td>Marinho/água doce</td>
+          </tr>
+          <tr>
+            <td>Branchiopoda</td>
+            <td>Apêndices em forma de folha para natação e respiração</td>
+            <td>Daphnia, artêmia</td>
+            <td>Água doce/salgada</td>
+          </tr>
+          <tr>
+            <td>Maxillopoda</td>
+            <td>Inclui Copepoda (plâncton) e Cirripedia (cracas fixas)</td>
+            <td>Cracas, copépodes</td>
+            <td>Marinho (fixos/plâncton)</td>
+          </tr>
+          <tr>
+            <td>Ostracoda</td>
+            <td>Microcrustáceos com concha bivalve</td>
+            <td>Ostracodes</td>
+            <td>Água doce/marinhos</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="group-title">Miniquiz</h2>
+      <div class="quiz">
+        <div>
+          <p>Qual crustáceo vive fora da água?</p>
+          <button onclick="responder(this, true)">Tatuzinho</button>
+          <button onclick="responder(this, false)">Camarão</button>
+          <button onclick="responder(this, false)">Lagosta</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+          <p>Qual classe possui apêndices em forma de folha?</p>
+          <button onclick="responder(this, true)">Branchiopoda</button>
+          <button onclick="responder(this, false)">Malacostraca</button>
+          <button onclick="responder(this, false)">Maxillopoda</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+          <p>Qual subclasse é importante no plâncton?</p>
+          <button onclick="responder(this, true)">Copepoda</button>
+          <button onclick="responder(this, false)">Cirripedia</button>
+          <button onclick="responder(this, false)">Ostracoda</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+          <p>Qual crustáceo possui concha bivalve?</p>
+          <button onclick="responder(this, true)">Ostracodes</button>
+          <button onclick="responder(this, false)">Camarão</button>
+          <button onclick="responder(this, false)">Cracas</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+          <p>Qual crustáceo é conhecido como base da cadeia alimentar marinha?</p>
+          <button onclick="responder(this, true)">Krill</button>
+          <button onclick="responder(this, false)">Camarão</button>
+          <button onclick="responder(this, false)">Tatuzinho</button>
+          <div class="feedback"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hexapoda -->
+    <div id="hexapoda" class="content">
+      <!-- Mascote dos Insetos -->
+      <div class="mascot mascot-right">
+        <img src="abelha.png" alt="Mascote Abelha" class="mascot-image">
+      </div>
+
+      <h1 class="title-primary hexapoda-title">Filo Hexapoda (Insetos)</h1>
+      <div class="intro">
+        <h2 class="title-secondary hexapoda-title">Bem-vindo ao mundo dos Insetos!</h2>
+        <p>
+          Prepare-se para explorar o incrível universo dos insetos, os verdadeiros mestres da adaptação! 
+          Com seus corpos segmentados, asas e antenas, eles dominam os ambientes terrestres e aquáticos, desempenhando papéis essenciais nos ecossistemas.
+        </p>
+        <p>
+          Você sabia que os insetos são os maiores polinizadores do planeta? Sem eles, muitas plantas não poderiam se reproduzir, e a vida como conhecemos seria drasticamente diferente.
+        </p>
+        <p>
+          Descubra como vivem formigas, borboletas, besouros e outros insetos fascinantes. 
+          Aprenda sobre sua morfologia, ecologia e importância para o equilíbrio ambiental. 
+          E não se esqueça de testar seus conhecimentos no nosso <strong>Miniquiz</strong> ao final. Vamos lá, aventureiro dos artrópodes!
+        </p>
+        <p>
+          As imagens podem ser ampliadas para melhorar a visualização, e os QR Codes fornecem acesso a estruturas 3D representativas de cada grupo.
+        </p>
+      </div>
+
+      <h2 class="group-title">Grupos do Subfilo Hexapoda</h2>
+
+      <div class="group">
+        <h3 class="group-name">Coleoptera (Besouros)</h3>
+        <p><strong>Características:</strong> Asas anteriores endurecidas (élitros) que protegem as asas posteriores membranosas.</p>
+        <a href="besouros.png" target="_blank">
+          <img src="besouros.png" alt="Besouros" class="group-image">
+        </a>
+      </div>
+
+      <div class="group">
+        <h3 class="group-name">Lepidoptera (Borboletas e Mariposas)</h3>
+        <p><strong>Características:</strong> Asas cobertas por escamas coloridas; aparelho bucal em forma de espiral (probóscide).</p>
+        <a href="borboletas.png" target="_blank">
+          <img src="borboletas.png" alt="Borboletas e Mariposas" class="group-image">
+        </a>
+      </div>
+
+      <div class="group">
+        <h3 class="group-name">Hymenoptera (Abelhas, Vespas e Formigas)</h3>
+        <p><strong>Características:</strong> Corpo dividido em cabeça, tórax e abdômen; muitas espécies vivem em colônias organizadas.</p>
+        <a href="Hymenoptera.jpg" target="_blank">
+          <img src="Hymenoptera.jpg" alt="Abelhas, Vespas e Formigas" class="group-image">
+        </a>
+      </div>
+
+      <div class="group">
+        <h3 class="group-name">Orthoptera (Gafanhotos e Grilos)</h3>
+        <p><strong>Características:</strong> Pernas traseiras adaptadas para saltar; produzem sons ao esfregar partes do corpo.</p>
+        <a href="orthoptera.jpg" target="_blank">
+          <img src="orthoptera.jpg" alt="Gafanhotos e Grilos" class="group-image">
+        </a>
+      </div>
+
+      <h2 class="group-title">Morfologia</h2>
+      <div class="morfologia-section">
+        <ul>
+          <li><strong>Corpo:</strong> 
+            Dividido em três partes principais:
+            <ul>
+              <li><strong>Cabeça:</strong> Contém os olhos compostos, antenas e peças bucais especializadas (como mastigadoras, sugadoras ou perfuradoras, dependendo da espécie).</li>
+              <li><strong>Tórax:</strong> Segmento central que suporta as asas e as pernas. É dividido em três partes: protórax, mesotórax e metatórax.</li>
+              <li><strong>Abdômen:</strong> Contém os órgãos digestivos, excretores e reprodutivos. Geralmente é segmentado e flexível.</li>
+            </ul>
+          </li>
+          <li><strong>Pernas:</strong> 
+            Três pares de pernas articuladas, localizadas no tórax. Cada par pode ser adaptado para diferentes funções:
+            <ul>
+              <li><strong>Caminhar:</strong> Pernas simples para locomoção.</li>
+              <li><strong>Saltar:</strong> Pernas traseiras alongadas, como em gafanhotos.</li>
+              <li><strong>Cavar:</strong> Pernas robustas e adaptadas, como em grilos-toupeira.</li>
+              <li><strong>Nadar:</strong> Pernas achatadas e adaptadas para ambientes aquáticos, como em besouros aquáticos.</li>
+            </ul>
+          </li>
+          <li><strong>Antenas:</strong> 
+            Um par de antenas sensoriais localizadas na cabeça. São usadas para detectar cheiros, vibrações, umidade e até mesmo para comunicação em algumas espécies.
+          </li>
+          <li><strong>Asas:</strong> 
+            Geralmente dois pares de asas, embora algumas espécies sejam ápteras (sem asas). As asas podem ser:
+            <ul>
+              <li><strong>Membranosas:</strong> Como em libélulas e abelhas.</li>
+              <li><strong>Endurecidas:</strong> Como os élitros dos besouros, que protegem as asas posteriores.</li>
+              <li><strong>Escamosas:</strong> Como nas borboletas, que possuem asas cobertas por escamas coloridas.</li>
+            </ul>
+          </li>
+          <li><strong>Olhos:</strong> 
+            Os insetos possuem olhos compostos, formados por várias unidades chamadas omatídeos, que permitem uma visão ampla e sensível ao movimento. Além disso, muitos possuem olhos simples (ocelos) para detectar luz e escuridão.
+          </li>
+          <li><strong>Peças bucais:</strong> 
+            Altamente diversificadas, adaptadas ao tipo de alimentação:
+            <ul>
+              <li><strong>Mastigadoras:</strong> Como em gafanhotos e besouros.</li>
+              <li><strong>Sugadoras:</strong> Como em borboletas e mariposas.</li>
+              <li><strong>Perfuradoras:</strong> Como em mosquitos.</li>
+              <li><strong>Lambe-lambe:</strong> Como em moscas.</li>
+            </ul>
+          </li>
+        </ul>
+        <a href="morfologiainseto.webp" target="_blank">
+          <img src="morfologiainseto.webp" alt="Morfologia dos Insetos" class="morfologia-image">
+        </a>
+      </div>
+
+      <h2 class="group-title">Ecologia</h2>
+      <ul>
+        <li><strong>Habitats:</strong>
+          <ul>
+            <li><strong>Terrestres:</strong> A maioria dos insetos vive em ambientes terrestres, como florestas, campos, desertos e até mesmo em áreas urbanas.</li>
+            <li><strong>Aquáticos:</strong> Algumas espécies, como as larvas de libélulas e besouros aquáticos, vivem em ambientes aquáticos, desempenhando papéis importantes na cadeia alimentar.</li>
+            <li><strong>Subterrâneos:</strong> Insetos como formigas e cupins constroem túneis e colônias subterrâneas, ajudando a arejar o solo e reciclar nutrientes.</li>
+          </ul>
+        </li>
+        <li><strong>Funções ecológicas:</strong>
+          <ul>
+            <li><strong>Polinizadores:</strong> Insetos como abelhas, borboletas e besouros são essenciais para a polinização de plantas, garantindo a reprodução de muitas espécies vegetais e a produção de alimentos.</li>
+            <li><strong>Decompositores:</strong> Besouros, moscas e outros insetos ajudam a decompor matéria orgânica, como folhas, madeira morta e carcaças de animais, reciclando nutrientes para o ecossistema.</li>
+            <li><strong>Controle de pragas:</strong> Insetos predadores, como joaninhas e louva-a-deus, ajudam a controlar populações de pragas agrícolas, reduzindo a necessidade de pesticidas.</li>
+            <li><strong>Dispersores de sementes:</strong> Algumas espécies de formigas carregam sementes para seus ninhos, ajudando na dispersão e germinação de plantas.</li>
+          </ul>
+        </li>
+        <li><strong>Interações ecológicas:</strong>
+          <ul>
+            <li><strong>Simbiônticos:</strong> Muitos insetos vivem em simbiose com outras espécies. Por exemplo, formigas protegem pulgões em troca de secreções açucaradas.</li>
+            <li><strong>Predadores e presas:</strong> Insetos desempenham papéis duplos na cadeia alimentar, sendo predadores de pequenos organismos e presas de aves, anfíbios e mamíferos.</li>
+            <li><strong>Parasitismo:</strong> Algumas espécies, como vespas parasitóides, depositam seus ovos em outros insetos, cujas larvas servem de alimento para os filhotes.</li>
+          </ul>
+        </li>
+        <li><strong>Impacto nos ecossistemas:</strong>
+          <ul>
+            <li><strong>Manutenção do equilíbrio ecológico:</strong> Insetos desempenham papéis cruciais na manutenção do equilíbrio dos ecossistemas, garantindo a reciclagem de nutrientes e a saúde do solo.</li>
+            <li><strong>Bioindicadores:</strong> A presença ou ausência de certas espécies de insetos pode indicar a saúde de um ecossistema, como a qualidade da água ou do solo.</li>
+            <li><strong>Engenheiros do ecossistema:</strong> Insetos como cupins e formigas constroem estruturas que modificam o ambiente, criando habitats para outras espécies.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2 class="group-title">Resumo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Grupo</th>
+            <th>Características</th>
+            <th>Exemplos</th>
+            <th>Habitat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Grupo">Coleoptera</td>
+            <td data-label="Características">Asas anteriores endurecidas (élitros) que protegem as asas posteriores membranosas</td>
+            <td data-label="Exemplos">Besouros, joaninhas</td>
+            <td data-label="Habitat">Terrestre</td>
+          </tr>
+          <tr>
+            <td data-label="Grupo">Lepidoptera</td>
+            <td data-label="Características">Asas cobertas por escamas coloridas; aparelho bucal em forma de espiral (probóscide)</td>
+            <td data-label="Exemplos">Borboletas, mariposas</td>
+            <td data-label="Habitat">Terrestre</td>
+          </tr>
+          <tr>
+            <td data-label="Grupo">Hymenoptera</td>
+            <td data-label="Características">Corpo dividido em cabeça, tórax e abdômen; muitas espécies vivem em colônias organizadas</td>
+            <td data-label="Exemplos">Abelhas, vespas, formigas</td>
+            <td data-label="Habitat">Terrestre</td>
+          </tr>
+          <tr>
+            <td data-label="Grupo">Orthoptera</td>
+            <td data-label="Características">Pernas traseiras adaptadas para saltar; produzem sons ao esfregar partes do corpo</td>
+            <td data-label="Exemplos">Gafanhotos, grilos</td>
+            <td data-label="Habitat">Terrestre</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="group-title">Miniquiz</h2>
+      <div class="quiz">
+        <div>
+          <p>Qual inseto realiza metamorfose completa?</p>
+          <button onclick="responder(this, true)">Borboleta</button>
+          <button onclick="responder(this, false)">Gafanhoto</button>
+          <button onclick="responder(this, false)">Barata</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+          <p>Qual grupo possui asas cobertas por escamas coloridas?</p>
+          <button onclick="responder(this, true)">Lepidoptera</button>
+          <button onclick="responder(this, false)">Coleoptera</button>
+          <button onclick="responder(this, false)">Orthoptera</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+          <p>Qual grupo é conhecido por viver em colônias organizadas?</p>
+          <button onclick="responder(this, true)">Hymenoptera</button>
+          <button onclick="responder(this, false)">Orthoptera</button>
+          <button onclick="responder(this, false)">Lepidoptera</button>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- Novas perguntas -->
+        <div>
+          <p>Qual inseto é conhecido por produzir mel?</p>
+          <button onclick="responder(this, true)">Abelha</button>
+          <button onclick="responder(this, false)">Formiga</button>
+          <button onclick="responder(this, false)">Gafanhoto</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+          <p>Qual grupo possui pernas traseiras adaptadas para saltar?</p>
+          <button onclick="responder(this, true)">Orthoptera</button>
+          <button onclick="responder(this, false)">Coleoptera</button>
+          <button onclick="responder(this, false)">Hymenoptera</button>
+          <div class="feedback"></div>
+        </div>
+
+        <div>
+            <p>Qual inseto é conhecido por sua capacidade de carregar objetos muito maiores que seu próprio peso?</p>
+            <button onclick="responder(this, true)">Formiga</button>
+            <button onclick="responder(this, false)">Borboleta</button>
+            <button onclick="responder(this, false)">Besouro</button>
+            <div class="feedback"></div>
+        </div>
+      </div>
+      </div> 
+        <!-- Game -->
+        <div id="game" class="content">
+          <h1 class="title-primary game-title">Quebra-Cabeça - Crustáceos</h1>
+          <div class="intro">
+            <h2 class="title-secondary game-title">Monte a imagem do lagostim!</h2>
+            <p>Arraste as peças até formar a imagem correta.</p>
+          </div>
+
+          <div id="puzzle-status" style="margin-top: 20px; font-weight: bold;">
+            Movimentos: <span id="puzzle-moves">0</span>
+          </div>
+
+          <!-- Container com puzzle e botão centralizados -->
+          <div class="puzzle-wrapper">
+            <div id="puzzle-container" class="puzzle-game">
+              <!-- As peças serão renderizadas via JavaScript -->
+            </div>
+            <button id="reset-puzzle" style="padding: 8px 16px; font-weight: bold;">Reiniciar Quebra-Cabeça</button>
+          </div>
+
+          <hr style="margin: 30px 0;">
+
+          <!-- Aqui continua seu Jogo da Memória ou outros conteúdos -->
+        </div>
+
+        <!-- Jogo da Memória -->
+        <h1 class="title-primary game-title">Jogo da Memória - Hexápodes</h1>
+        <div class="intro">
+          <h2 class="title-secondary game-title">Encontre os pares de insetos e suas descrições!</h2>
+          <p>Clique nas cartas para revelar e combinar cada inseto com sua respectiva descrição.</p>
+        </div>
+
+        <div id="game-status" style="margin-top: 20px; font-weight: bold;">
+          Pontuação: <span id="score">0</span> / 8 pares encontrados
+        </div>
+
+        <div id="memory-game" class="memory-game"></div>
+      </div>
+
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
