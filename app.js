@@ -1,3 +1,4 @@
+// Torna openTab acessível no HTML
 function openTab(id) {
   document.querySelectorAll('.content').forEach(content => {
     content.classList.remove('active');
@@ -6,10 +7,16 @@ function openTab(id) {
     button.classList.remove('active');
   });
 
-  document.getElementById(id).classList.add('active');
-  document.getElementById(`btn-${id}`).classList.add('active');
+  const content = document.getElementById(id);
+  const button = document.getElementById(`btn-${id}`);
+
+  if (content && button) {
+    content.classList.add('active');
+    button.classList.add('active');
+  }
 }
 
+// Função para quiz
 function responder(button, isCorrect) {
   const parent = button.closest('div');
   const feedback = parent.querySelector('.feedback');
@@ -24,22 +31,6 @@ function responder(button, isCorrect) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // FUNÇÃO OPEN TAB
-  window.openTab = function (id) {
-    document.querySelectorAll('.content').forEach(content => {
-      content.classList.remove('active');
-    });
-    document.querySelectorAll('.tab-button').forEach(button => {
-      button.classList.remove('active');
-    });
-
-    const content = document.getElementById(id);
-    const button = document.getElementById(`btn-${id}`);
-
-    if (content && button) {
-      content.classList.add('active');
-      button.classList.add('active');
-    }
   // JOGO DA MEMÓRIA
   const pairs = [
     { name: "abelha", image: "bee.png", text: "Inseto conhecido por produzir mel e viver em colmeias." },
@@ -111,80 +102,80 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-// QUEBRA-CABEÇA FUNCIONAL
-const puzzleContainer = document.getElementById("puzzle-container");
-const movesDisplay = document.getElementById("puzzle-moves");
-let moves = 0;
+  // QUEBRA-CABEÇA
+  const puzzleContainer = document.getElementById("puzzle-container");
+  const movesDisplay = document.getElementById("puzzle-moves");
+  let moves = 0;
 
-const correctOrder = [
-  "posicao1.png", "posicao2.png", "posicao3.png",
-  "posicao4.png", "posicao5.png", "posicao6.png",
-  "posicao7.png", "posicao8.png", "posicao9.png",
-  "posicao10.png", "posicao11.png", "posicao12.png",
-  "posicao13.png", "posicao14.png", "posicao15.png"
-];
+  const correctOrder = [
+    "posicao1.png", "posicao2.png", "posicao3.png",
+    "posicao4.png", "posicao5.png", "posicao6.png",
+    "posicao7.png", "posicao8.png", "posicao9.png",
+    "posicao10.png", "posicao11.png", "posicao12.png",
+    "posicao13.png", "posicao14.png", "posicao15.png"
+  ];
 
-function shuffle(array) {
-  const copy = [...array];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
+  function shuffle(array) {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
   }
-  return copy;
-}
 
-let pieceOrder = shuffle(correctOrder);
+  let pieceOrder = shuffle(correctOrder);
 
-function renderPuzzle() {
-  puzzleContainer.innerHTML = "";
-  pieceOrder.forEach((src, index) => {
-    const pieceContainer = document.createElement("div");
-    pieceContainer.className = "puzzle-piece-container";
-    pieceContainer.dataset.index = index;
+  function renderPuzzle() {
+    puzzleContainer.innerHTML = "";
+    pieceOrder.forEach((src, index) => {
+      const pieceContainer = document.createElement("div");
+      pieceContainer.className = "puzzle-piece-container";
+      pieceContainer.dataset.index = index;
 
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = src;
-    img.draggable = true;
-    img.classList.add("puzzle-piece");
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = src;
+      img.draggable = true;
+      img.classList.add("puzzle-piece");
 
-    pieceContainer.appendChild(img);
-    puzzleContainer.appendChild(pieceContainer);
+      pieceContainer.appendChild(img);
+      puzzleContainer.appendChild(pieceContainer);
 
-    // DRAG AND DROP
-    pieceContainer.addEventListener("dragstart", (e) => {
-      e.dataTransfer.setData("text/plain", index);
+      pieceContainer.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("text/plain", index);
+      });
+
+      pieceContainer.addEventListener("dragover", (e) => {
+        e.preventDefault();
+      });
+
+      pieceContainer.addEventListener("drop", (e) => {
+        e.preventDefault();
+        const fromIndex = parseInt(e.dataTransfer.getData("text/plain"), 10);
+        const toIndex = index;
+
+        if (fromIndex === toIndex) return;
+
+        [pieceOrder[fromIndex], pieceOrder[toIndex]] = [pieceOrder[toIndex], pieceOrder[fromIndex]];
+        moves++;
+        movesDisplay.textContent = moves;
+
+        if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
+          setTimeout(() => alert("Parabéns! Você montou o lagostim! 🦞"), 100);
+        }
+
+        renderPuzzle();
+      });
     });
+  }
 
-    pieceContainer.addEventListener("dragover", (e) => {
-      e.preventDefault();
-    });
-
-    pieceContainer.addEventListener("drop", (e) => {
-      e.preventDefault();
-      const fromIndex = parseInt(e.dataTransfer.getData("text/plain"), 10);
-      const toIndex = index;
-
-      if (fromIndex === toIndex) return;
-
-      [pieceOrder[fromIndex], pieceOrder[toIndex]] = [pieceOrder[toIndex], pieceOrder[fromIndex]];
-      moves++;
-      movesDisplay.textContent = moves;
-
-      if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
-        setTimeout(() => alert("Parabéns! Você montou o lagostim! 🦞"), 100);
-      }
-
-      renderPuzzle();
-    });
+  document.getElementById("reset-puzzle").addEventListener("click", () => {
+    pieceOrder = shuffle(correctOrder);
+    moves = 0;
+    movesDisplay.textContent = moves;
+    renderPuzzle();
   });
-}
 
-document.getElementById("reset-puzzle").addEventListener("click", () => {
-  pieceOrder = shuffle(correctOrder);
-  moves = 0;
-  movesDisplay.textContent = moves;
   renderPuzzle();
 });
-
-renderPuzzle();
