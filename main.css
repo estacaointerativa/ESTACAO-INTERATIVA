@@ -831,27 +831,28 @@ tr:nth-child(even) {
   .puzzle-game,
   #puzzle-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
     width: 100vw;
+    gap: 0;
     margin: 0 auto;
     padding: 0;
-    justify-content: center;
   }
 
   .puzzle-piece,
   .puzzle-piece-container {
-    width: 28vw;
-    height: 28vw;
+    width: 30vw;
+    height: 30vw;
     object-fit: cover;
     margin: 0;
     padding: 0;
     border: none;
     display: block;
+    touch-action: manipulation;
   }
 
   .puzzle-wrapper {
     overflow-x: hidden;
   }
+}
 
   #reset-puzzle {
     width: 100%;
@@ -929,10 +930,14 @@ tr:nth-child(even) {
 
 .puzzle-piece,
 .puzzle-piece-container {
-  -webkit-user-drag: none;       /* Impede o drag no Safari */
-  user-select: none;             /* Impede seleção de texto */
-  -webkit-user-select: none;     /* Chrome/Safari */
-  -moz-user-select: none;        /* Firefox */
-  -ms-user-select: none;         /* IE/Edge */
-  touch-action: none;            /* Impede gestos como zoom e scroll durante o toque */
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: manipulation;
+}
+
+.puzzle-piece img {
+  pointer-events: none; /* Impede o clique longo em imagens */
 }
