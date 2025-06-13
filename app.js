@@ -95,88 +95,85 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // QUEBRA-CABEÇA
-  const puzzleContainer = document.getElementById("puzzle-container");
-  const movesDisplay = document.getElementById("puzzle-moves");
-  let moves = 0;
+ // QUEBRA-CABEÇA
+const puzzleContainer = document.getElementById("puzzle-container");
+const movesDisplay = document.getElementById("puzzle-moves");
+let moves = 0;
 
-  const correctOrder = [
-    "posicao1.png", "posicao2.png", "posicao3.png",
-    "posicao4.png", "posicao5.png", "posicao6.png",
-    "posicao7.png", "posicao8.png", "posicao9.png",
-    "posicao10.png", "posicao11.png", "posicao12.png",
-    "posicao13.png", "posicao14.png", "posicao15.png"
-  ];
+const correctOrder = [
+  "posicao1.png", "posicao2.png", "posicao3.png",
+  "posicao4.png", "posicao5.png", "posicao6.png",
+  "posicao7.png", "posicao8.png", "posicao9.png",
+  "posicao10.png", "posicao11.png", "posicao12.png",
+  "posicao13.png", "posicao14.png", "posicao15.png"
+];
 
-  function shuffle(array) {
-    const copy = [...array];
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
+function shuffle(array) {
+  const copy = [...array];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
   }
+  return copy;
+}
 
-  const pieceOrder = shuffle(correctOrder);
+const pieceOrder = shuffle(correctOrder);
+let draggedIndex = null;
 
-  function renderPuzzle() {
-    puzzleContainer.innerHTML = "";
-    pieceOrder.forEach((src, index) => {
-      const pieceContainer = document.createElement("div");
-      pieceContainer.className = "puzzle-piece-container";
-      pieceContainer.dataset.index = index;
+function renderPuzzle() {
+  puzzleContainer.innerHTML = "";
+  pieceOrder.forEach((src, index) => {
+    const pieceContainer = document.createElement("div");
+    pieceContainer.className = "puzzle-piece-container";
+    pieceContainer.dataset.index = index;
 
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = src;
-      img.draggable = true;
-      img.classList.add("puzzle-piece");
-      img.style.userSelect = "none";
-      img.style.webkitUserDrag = "none";
-      img.style.touchAction = "manipulation";
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = src;
+    img.draggable = true;
+    img.classList.add("puzzle-piece");
+    img.style.userSelect = "none";
+    img.style.webkitUserDrag = "none";
+    img.style.touchAction = "manipulation";
 
-      img.addEventListener("dragstart", dragStart);
-      pieceContainer.addEventListener("dragover", dragOver);
-      pieceContainer.addEventListener("drop", dropPiece);
+    pieceContainer.appendChild(img);
 
-      pieceContainer.appendChild(img);
-      puzzleContainer.appendChild(pieceContainer);
+    // Eventos de arraste aplicados no container (não na imagem!)
+    pieceContainer.addEventListener("dragstart", (e) => {
+      draggedIndex = index;
+      e.dataTransfer.effectAllowed = "move";
     });
-  }
 
-  let draggedIndex = null;
+    pieceContainer.addEventListener("dragover", (e) => {
+      e.preventDefault(); // Necessário para permitir drop
+    });
 
-  function dragStart(e) {
-    draggedIndex = +e.target.closest('.puzzle-piece-container').dataset.index;
-  }
+    pieceContainer.addEventListener("drop", (e) => {
+      e.preventDefault();
+      const targetIndex = parseInt(pieceContainer.dataset.index);
+      if (draggedIndex === null || draggedIndex === targetIndex) return;
 
-  function dragOver(e) {
-    e.preventDefault();
-  }
+      [pieceOrder[draggedIndex], pieceOrder[targetIndex]] = [pieceOrder[targetIndex], pieceOrder[draggedIndex]];
+      moves++;
+      movesDisplay.textContent = moves;
 
-  function dropPiece(e) {
-    e.preventDefault();
-    const targetIndex = +e.currentTarget.dataset.index;
-    if (draggedIndex === null || targetIndex === null || draggedIndex === targetIndex) return;
+      if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
+        setTimeout(() => alert("Parabéns! Você montou o lagostim! 🦞"), 200);
+      }
 
-    [pieceOrder[draggedIndex], pieceOrder[targetIndex]] = [pieceOrder[targetIndex], pieceOrder[draggedIndex]];
-    moves++;
-    movesDisplay.textContent = moves;
+      renderPuzzle();
+    });
 
-    if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
-      setTimeout(() => alert("Parabéns! Você montou o lagostim! 🦞"), 200);
-    }
-
-    renderPuzzle();
-  }
-
-  document.getElementById("reset-puzzle").addEventListener("click", () => {
-    pieceOrder.length = 0;
-    pieceOrder.push(...shuffle(correctOrder));
-    moves = 0;
-    movesDisplay.textContent = moves;
-    renderPuzzle();
+    puzzleContainer.appendChild(pieceContainer);
   });
+}
 
+document.getElementById("reset-puzzle").addEventListener("click", () => {
+  pieceOrder.length = 0;
+  pieceOrder.push(...shuffle(correctOrder));
+  moves = 0;
+  movesDisplay.textContent = moves;
   renderPuzzle();
 });
+
+renderPuzzle();
