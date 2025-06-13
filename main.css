@@ -831,16 +831,22 @@ tr:nth-child(even) {
   /* Quebra-cabeça responsivo */
   .puzzle-game,
   #puzzle-container {
-    grid-template-columns: repeat(3, 1fr); /* Reduz de 5 para 3 colunas */
-    width: 100%;
-    gap: 2px;
+    grid-template-columns: repeat(3, 80px);
+    gap: 0;
+    width: fit-content;
+    margin: 0 auto;
   }
 
   .puzzle-piece,
   .puzzle-piece-container {
     width: 80px;
     height: 80px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    object-fit: cover;
   }
+}
 
   #reset-puzzle {
     width: 100%;
