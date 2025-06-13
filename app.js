@@ -124,22 +124,20 @@ document.addEventListener("DOMContentLoaded", () => {
     pieceOrder.forEach((src, index) => {
       const pieceContainer = document.createElement("div");
       pieceContainer.className = "puzzle-piece-container";
+      pieceContainer.dataset.index = index;
 
       const img = document.createElement("img");
       img.src = src;
       img.alt = src;
       img.draggable = true;
       img.classList.add("puzzle-piece");
-      img.dataset.index = index;
-
-      // Evita comportamento nativo de arrastar imagens (área de transferência em celulares)
       img.style.userSelect = "none";
       img.style.webkitUserDrag = "none";
       img.style.touchAction = "manipulation";
 
       img.addEventListener("dragstart", dragStart);
-      img.addEventListener("dragover", dragOver);
-      img.addEventListener("drop", dropPiece);
+      pieceContainer.addEventListener("dragover", dragOver);
+      pieceContainer.addEventListener("drop", dropPiece);
 
       pieceContainer.appendChild(img);
       puzzleContainer.appendChild(pieceContainer);
@@ -149,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let draggedIndex = null;
 
   function dragStart(e) {
-    draggedIndex = +e.target.dataset.index;
+    draggedIndex = +e.target.closest('.puzzle-piece-container').dataset.index;
   }
 
   function dragOver(e) {
@@ -157,7 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function dropPiece(e) {
-    const targetIndex = +e.target.dataset.index;
+    e.preventDefault();
+    const targetIndex = +e.currentTarget.dataset.index;
     if (draggedIndex === null || targetIndex === null || draggedIndex === targetIndex) return;
 
     [pieceOrder[draggedIndex], pieceOrder[targetIndex]] = [pieceOrder[targetIndex], pieceOrder[draggedIndex]];
@@ -165,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
     movesDisplay.textContent = moves;
 
     if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
-      setTimeout(() => alert("Parabéns! Você montou o lagostim!"), 200);
+      setTimeout(() => alert("Parabéns! Você montou o lagostim! 🦞"), 200);
     }
 
     renderPuzzle();
@@ -181,3 +180,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderPuzzle();
 });
+
