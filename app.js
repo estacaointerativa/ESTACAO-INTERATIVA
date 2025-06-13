@@ -24,6 +24,22 @@ function responder(button, isCorrect) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // FUNÇÃO OPEN TAB
+  window.openTab = function (id) {
+    document.querySelectorAll('.content').forEach(content => {
+      content.classList.remove('active');
+    });
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.classList.remove('active');
+    });
+
+    const content = document.getElementById(id);
+    const button = document.getElementById(`btn-${id}`);
+
+    if (content && button) {
+      content.classList.add('active');
+      button.classList.add('active');
+    }
   // JOGO DA MEMÓRIA
   const pairs = [
     { name: "abelha", image: "bee.png", text: "Inseto conhecido por produzir mel e viver em colmeias." },
