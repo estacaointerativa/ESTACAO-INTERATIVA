@@ -475,8 +475,8 @@ tr:nth-child(even) {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0;
-  width: 100vw;   /* Use 100vw para garantir que ocupe toda a largura */
-  max-width: 100vw;
+  width: 100%;
+  max-width: 500px; /* ou 400px, ajuste conforme necessário */
   margin: 0 auto;
   padding: 0;
   border: none;
@@ -485,8 +485,8 @@ tr:nth-child(even) {
 
 .puzzle-piece,
 .puzzle-piece-container {
-  width: calc(100vw / 5);   /* Mais preciso e evita gaps */
-  height: calc(100vw / 5);
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Mantém quadrado sem depender de height */
   max-width: 100px;
   max-height: 100px;
   object-fit: cover;
@@ -498,9 +498,6 @@ tr:nth-child(even) {
   cursor: pointer;
   -webkit-user-drag: none;
   user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   touch-action: manipulation;
 }
 
@@ -631,5 +628,12 @@ tr:nth-child(even) {
     height: 20vw;
     max-width: 80px;
     max-height: 80px;
+  }
+}
+  
+@media (max-width: 600px) {
+  .puzzle-game,
+  #puzzle-container {
+    max-width: 100vw;
   }
 }
