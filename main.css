@@ -599,15 +599,12 @@ tr:nth-child(even) {
   }
   .puzzle-piece,
   .puzzle-piece-container {
-    width: 30vw;
-    height: 30vw;
-  }
-  .puzzle-wrapper {
-    width: 100%;
-    padding: 0 5px;
+    width: 20vw;
+    height: 20vw;
+    max-width: 100px;  /* Limite para não crescer muito em tablets */
+    max-height: 100px;
   }
 }
-
 @media (max-width: 480px) {
   .puzzle-game,
   #puzzle-container {
@@ -618,7 +615,9 @@ tr:nth-child(even) {
   }
   .puzzle-piece,
   .puzzle-piece-container {
-    width: 30vw;
-    height: 30vw;
+    width: 20vw;
+    height: 20vw;
+    max-width: 80px; /* Limite menor para celulares pequenos */
+    max-height: 80px;
   }
 }
