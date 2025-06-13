@@ -590,34 +590,37 @@ tr:nth-child(even) {
   .content {
     padding-top: 20px;
   }
+  
+  @media (max-width: 768px) {
   .puzzle-game,
   #puzzle-container {
     grid-template-columns: repeat(5, 1fr);
     width: 100vw;
-    gap: 2px;
+    gap: 0; /* Remova o espaço entre as peças */
     margin: 0 auto;
   }
   .puzzle-piece,
   .puzzle-piece-container {
     width: 20vw;
     height: 20vw;
-    max-width: 100px;  /* Limite para não crescer muito em tablets */
+    max-width: 100px;
     max-height: 100px;
   }
 }
+
 @media (max-width: 480px) {
   .puzzle-game,
   #puzzle-container {
     grid-template-columns: repeat(5, 1fr);
     width: 100vw;
-    gap: 2px;
+    gap: 0; /* Remova o espaço entre as peças */
     margin: 0 auto;
   }
   .puzzle-piece,
   .puzzle-piece-container {
     width: 20vw;
     height: 20vw;
-    max-width: 80px; /* Limite menor para celulares pequenos */
+    max-width: 80px;
     max-height: 80px;
   }
 }
