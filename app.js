@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pieceContainer.appendChild(img);
       puzzleContainer.appendChild(pieceContainer);
 
+      // Drag & Drop para DESKTOP
       pieceContainer.addEventListener("dragstart", (e) => {
         e.dataTransfer.setData("text/plain", index);
       });
@@ -154,18 +155,45 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const fromIndex = parseInt(e.dataTransfer.getData("text/plain"), 10);
         const toIndex = index;
-
         if (fromIndex === toIndex) return;
-
         [pieceOrder[fromIndex], pieceOrder[toIndex]] = [pieceOrder[toIndex], pieceOrder[fromIndex]];
         moves++;
         movesDisplay.textContent = moves;
-
         if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
           setTimeout(() => alert("Parabéns! Você montou o lagostim! 🦞"), 100);
         }
-
         renderPuzzle();
+      });
+
+      // SUPORTE A TOUCH (CELULAR/TABLET)
+      let touchStartIndex = null;
+      pieceContainer.addEventListener("touchstart", (e) => {
+        touchStartIndex = index;
+        pieceContainer.classList.add("touching");
+      }, { passive: true });
+
+      pieceContainer.addEventListener("touchend", (e) => {
+        pieceContainer.classList.remove("touching");
+        if (touchStartIndex === null) return;
+        // Descobrir onde soltou
+        const touch = e.changedTouches[0];
+        const targetElem = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (targetElem) {
+          const dropContainer = targetElem.closest(".puzzle-piece-container");
+          if (dropContainer && dropContainer.dataset.index) {
+            const dropIndex = parseInt(dropContainer.dataset.index, 10);
+            if (dropIndex !== touchStartIndex) {
+              [pieceOrder[touchStartIndex], pieceOrder[dropIndex]] = [pieceOrder[dropIndex], pieceOrder[touchStartIndex]];
+              moves++;
+              movesDisplay.textContent = moves;
+              if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
+                setTimeout(() => alert("Parabéns! Você montou o lagostim! 🦞"), 100);
+              }
+              renderPuzzle();
+            }
+          }
+        }
+        touchStartIndex = null;
       });
     });
   }
