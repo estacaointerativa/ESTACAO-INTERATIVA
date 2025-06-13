@@ -926,3 +926,13 @@ tr:nth-child(even) {
   font-size: 0.9rem;
   padding: 10px;
 }
+
+.puzzle-piece,
+.puzzle-piece-container {
+  -webkit-user-drag: none;       /* Impede o drag no Safari */
+  user-select: none;             /* Impede seleção de texto */
+  -webkit-user-select: none;     /* Chrome/Safari */
+  -moz-user-select: none;        /* Firefox */
+  -ms-user-select: none;         /* IE/Edge */
+  touch-action: none;            /* Impede gestos como zoom e scroll durante o toque */
+}
