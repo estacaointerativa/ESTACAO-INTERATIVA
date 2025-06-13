@@ -941,3 +941,47 @@ tr:nth-child(even) {
 .puzzle-piece img {
   pointer-events: none; /* Impede o clique longo em imagens */
 }
+
+@media (max-width: 768px) {
+  .puzzle-game,
+  #puzzle-container {
+    grid-template-columns: repeat(3, 1fr);
+    width: 90vw;
+    gap: 2px;
+    margin: 0 auto;
+  }
+
+  .puzzle-piece,
+  .puzzle-piece-container {
+    width: 30vw;
+    height: 30vw;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    touch-action: manipulation;
+  }
+
+  .puzzle-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .puzzle-game,
+  #puzzle-container {
+    grid-template-columns: repeat(3, 1fr);
+    width: 95vw;
+    gap: 2px;
+    margin: 0 auto;
+  }
+
+  .puzzle-piece,
+  .puzzle-piece-container {
+    width: 30vw;
+    height: 30vw;
+  }
+}
