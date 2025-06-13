@@ -470,7 +470,7 @@ tr:nth-child(even) {
   grid-template-columns: repeat(5, 1fr);
   gap: 0;
   width: 100%;
-  max-width: 500px; /* ou 400px, ajuste conforme necessário */
+  max-width: 500px;
   margin: 0 auto;
   padding: 0;
   border: none;
@@ -480,7 +480,7 @@ tr:nth-child(even) {
 .puzzle-piece,
 .puzzle-piece-container {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Mantém quadrado sem depender de height */
+  aspect-ratio: 1 / 1;
   max-width: 100px;
   max-height: 100px;
   object-fit: cover;
@@ -489,10 +489,6 @@ tr:nth-child(even) {
   display: block;
   border: none;
   box-sizing: border-box;
-  cursor: pointer;
-  -webkit-user-drag: none;
-  user-select: none;
-  touch-action: manipulation;
 }
 
 .puzzle-wrapper {
