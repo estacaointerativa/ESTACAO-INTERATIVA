@@ -827,8 +827,32 @@ tr:nth-child(even) {
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  /* Estilo só para mobile, sem afetar o desktop */
+/* Quebra-cabeça com 4 colunas em celulares médios (480px a 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .puzzle-game,
+  #puzzle-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .puzzle-piece,
+  .puzzle-piece-container {
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+  }
+}
+
+/* Quebra-cabeça com 3 colunas em celulares pequenos (até 480px) */
+@media (max-width: 480px) {
   .puzzle-game,
   #puzzle-container {
     grid-template-columns: repeat(3, 1fr);
@@ -841,17 +865,13 @@ tr:nth-child(even) {
 
   .puzzle-piece,
   .puzzle-piece-container {
-    width: calc(100vw / 3);
-    height: calc(100vw / 3);
+    width: 33.33vw;
+    height: 33.33vw;
     object-fit: cover;
     margin: 0;
     padding: 0;
     border: none;
     display: block;
-  }
-
-  .puzzle-wrapper {
-    overflow-x: hidden; /* Impede scroll lateral */
   }
 }
 
