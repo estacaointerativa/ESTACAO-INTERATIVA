@@ -197,15 +197,13 @@ ul {
 }
 
 .mascot-right {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
+  position: static !important;
+  margin: 0 auto 20px auto;
   text-align: center;
 }
 
 .mascot-right .mascot-image {
-  max-width: 200px;
+  max-width: 120px;
   height: auto;
 }
 
