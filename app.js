@@ -12,13 +12,9 @@ function openTab(id) {
 }
 
 function responder(button, isCorrect) {
-  // Localiza o contêiner pai do botão clicado
   const parent = button.closest('div');
-
-  // Localiza o feedback dentro do contêiner pai
   const feedback = parent.querySelector('.feedback');
 
-  // Define o texto e a cor do feedback com base na resposta
   if (isCorrect) {
     feedback.textContent = 'Correto!';
     feedback.style.color = 'green';
@@ -29,47 +25,16 @@ function responder(button, isCorrect) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // JOGO DA MEMÓRIA
   const pairs = [
-    {
-      name: "abelha",
-      image: "bee.png",
-      text: "Inseto conhecido por produzir mel e viver em colmeias."
-    },
-    {
-      name: "formiga",
-      image: "ant.png",
-      text: "Inseto famoso por sua força e vida em colônia."
-    },
-    {
-      name: "borboleta",
-      image: "butterfly.png",
-      text: "Inseto com asas escamosas coloridas e metamorfose completa."
-    },
-    {
-      name: "gafanhoto",
-      image: "grasshopper.png",
-      text: "Inseto com pernas traseiras adaptadas para saltar grandes distâncias."
-    },
-    {
-      name: "joaninha",
-      image: "ladybug.png",
-      text: "Inseto colorido com pintinhas pretas, conhecido por combater pulgões."
-    },
-    {
-      name: "vespa",
-      image: "wasp.png",
-      text: "Inseto com ferrão doloroso e corpo afilado, aparentado com as abelhas."
-    },
-    {
-      name: "besouro",
-      image: "beetle.png",
-      text: "Inseto com élitros duros que protegem as asas traseiras."
-    },
-    {
-      name: "mariposa",
-      image: "moth.png",
-      text: "Inseto noturno com asas peludas e corpo robusto, aparentado com as borboletas."
-    }
+    { name: "abelha", image: "bee.png", text: "Inseto conhecido por produzir mel e viver em colmeias." },
+    { name: "formiga", image: "ant.png", text: "Inseto famoso por sua força e vida em colônia." },
+    { name: "borboleta", image: "butterfly.png", text: "Inseto com asas escamosas coloridas e metamorfose completa." },
+    { name: "gafanhoto", image: "grasshopper.png", text: "Inseto com pernas traseiras adaptadas para saltar grandes distâncias." },
+    { name: "joaninha", image: "ladybug.png", text: "Inseto colorido com pintinhas pretas, conhecido por combater pulgões." },
+    { name: "vespa", image: "wasp.png", text: "Inseto com ferrão doloroso e corpo afilado, aparentado com as abelhas." },
+    { name: "besouro", image: "beetle.png", text: "Inseto com élitros duros que protegem as asas traseiras." },
+    { name: "mariposa", image: "moth.png", text: "Inseto noturno com asas peludas e corpo robusto, aparentado com as borboletas." }
   ];
 
   const memoryGame = document.getElementById("memory-game");
@@ -77,21 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = [];
   let score = 0;
 
-  // Criar cartas
   pairs.forEach(pair => {
     cards.push({ type: "image", name: pair.name, content: `<img src="${pair.image}" alt="${pair.name}">` });
     cards.push({ type: "text", name: pair.name, content: pair.text });
   });
 
-  // Embaralhar
   cards.sort(() => 0.5 - Math.random());
 
-  // Criar elementos no DOM
   cards.forEach(card => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("memory-card");
     cardElement.dataset.name = card.name;
-
     cardElement.innerHTML = `
       <div class="memory-card-inner">
         <div class="memory-card-front"></div>
@@ -134,9 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 700);
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+  // QUEBRA-CABEÇA
   const puzzleContainer = document.getElementById("puzzle-container");
   const movesDisplay = document.getElementById("puzzle-moves");
   let moves = 0;
@@ -149,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "posicao13.png", "posicao14.png", "posicao15.png"
   ];
 
-  // Embaralha de forma mais eficiente
   function shuffle(array) {
     const copy = [...array];
     for (let i = copy.length - 1; i > 0; i--) {
@@ -173,6 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
       img.draggable = true;
       img.classList.add("puzzle-piece");
       img.dataset.index = index;
+
+      // Evita comportamento nativo de arrastar imagens (área de transferência em celulares)
+      img.style.userSelect = "none";
+      img.style.webkitUserDrag = "none";
+      img.style.touchAction = "manipulation";
 
       img.addEventListener("dragstart", dragStart);
       img.addEventListener("dragover", dragOver);
@@ -201,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
     moves++;
     movesDisplay.textContent = moves;
 
-    // Verifica antes de redesenhar
     if (JSON.stringify(pieceOrder) === JSON.stringify(correctOrder)) {
       setTimeout(() => alert("Parabéns! Você montou o lagostim!"), 200);
     }
@@ -218,8 +181,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   renderPuzzle();
-});
-
-document.querySelectorAll('.puzzle-piece').forEach(piece => {
-  piece.addEventListener('dragstart', e => e.preventDefault());
 });
