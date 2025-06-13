@@ -826,3 +826,51 @@ tr:nth-child(even) {
   padding: 0;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  /* Quebra-cabeça responsivo */
+  .puzzle-game,
+  #puzzle-container {
+    grid-template-columns: repeat(3, 1fr); /* Reduz de 5 para 3 colunas */
+    width: 100%;
+    gap: 2px;
+  }
+
+  .puzzle-piece,
+  .puzzle-piece-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  #reset-puzzle {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* Jogo da memória responsivo */
+  .memory-game {
+    grid-template-columns: repeat(2, 1fr); /* De 4 para 2 colunas */
+    gap: 10px;
+  }
+
+  .memory-card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .memory-card img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .memory-card-front,
+  .memory-card-back {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+
+  .quiz button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
