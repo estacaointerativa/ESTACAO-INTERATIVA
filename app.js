@@ -219,3 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderPuzzle();
 });
+
+document.querySelectorAll('.puzzle-piece').forEach(piece => {
+  piece.addEventListener('dragstart', e => e.preventDefault());
+});
