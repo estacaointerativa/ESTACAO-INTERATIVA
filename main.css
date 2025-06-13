@@ -938,8 +938,21 @@ tr:nth-child(even) {
   touch-action: manipulation;
 }
 
-.puzzle-piece img {
-  pointer-events: none; /* Impede o clique longo em imagens */
+.puzzle-piece {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: manipulation;
 }
 
 @media (max-width: 768px) {
