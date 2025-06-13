@@ -828,24 +828,22 @@ tr:nth-child(even) {
 }
 
 @media (max-width: 768px) {
-  /* Container do quebra-cabeça responsivo */
   .puzzle-game,
   #puzzle-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2vw;
-    width: 90vw;
-    max-width: 270px; /* Limita para não estourar */
+    grid-template-columns: repeat(3, 33.33vw);
+    gap: 0;
+    width: 100vw;
     margin: 0 auto;
   }
 
   .puzzle-piece,
   .puzzle-piece-container {
-    width: 28vw;  /* 90vw / 3 colunas com gap = 2vw */
-    height: 28vw;
+    width: 33.33vw;
+    height: 33.33vw;
     object-fit: cover;
-    border: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    border: none;
     display: block;
   }
 }
