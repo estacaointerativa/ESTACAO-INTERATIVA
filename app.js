@@ -5,10 +5,9 @@ function openTab(id) {
   document.querySelectorAll('.tab-button').forEach(button => {
     button.classList.remove('active');
   });
-  setTimeout(() => {
-    document.getElementById(id).classList.add('active');
-    document.getElementById(`btn-${id}`).classList.add('active');
-  }, 100);
+
+  document.getElementById(id).classList.add('active');
+  document.getElementById(`btn-${id}`).classList.add('active');
 }
 
 function responder(button, isCorrect) {
