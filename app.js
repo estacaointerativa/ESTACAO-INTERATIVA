@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const pieceContainer = document.createElement("div");
       pieceContainer.className = "puzzle-piece-container";
       pieceContainer.dataset.index = index;
+      pieceContainer.draggable = true;
 
       const img = document.createElement("img");
       img.src = src;
