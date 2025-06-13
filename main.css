@@ -1,19 +1,19 @@
 body {
   font-family: Arial, sans-serif;
-  background: url('fundo2.png') no-repeat center center fixed; /* Define a imagem de fundo */
-  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background: url('fundo2.png') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+  max-width: 1200px;
   margin: 20px auto;
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar o conteúdo */
-  text-align: justify; /* Justifica o texto */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: justify;
 }
 
 .navigation {
@@ -21,12 +21,13 @@ body {
   margin-bottom: 20px;
 }
 
+/* ======== Abas / Botões ======== */
 .tab-button {
   padding: 10px 20px;
   margin: 0 10px;
-  background-color: #0077cc;
-  color: #fff;
-  border: none;
+  background-color: #f0f0f0;
+  color: black;
+  border: 2px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
@@ -34,21 +35,57 @@ body {
 }
 
 .tab-button:hover {
-  background-color: #005fa3;
-  transform: translateY(-2px);
+  background-color: #ddd;
 }
 
 .tab-button.active {
   background-color: #004a7c;
+  color: #fff;
+  border-color: #004a7c;
   transform: translateY(0);
 }
 
+/* Botões específicos */
+#btn-crustacea {
+  background-color: #b22222;
+  color: white;
+  border: 2px solid #b22222;
+}
+
+#btn-crustacea:hover {
+  background-color: #ff6347;
+  border-color: #ff6347;
+}
+
+#btn-hexapoda {
+  background-color: #ffcc00;
+  color: black;
+  border: 2px solid #ffcc00;
+}
+
+#btn-hexapoda:hover {
+  background-color: #ff9900;
+  border-color: #ff9900;
+}
+
+#btn-game {
+  background-color: #006400;
+  color: white;
+  border: 2px solid #006400;
+}
+
+#btn-game:hover {
+  background-color: #228B22;
+  border-color: #228B22;
+}
+
+/* ======== Conteúdo ======== */
 .content {
   display: none;
   padding: 20px;
   opacity: 0;
   transition: opacity 0.5s ease;
-  text-align: justify; /* Justifica o texto */
+  text-align: justify;
 }
 
 .content.active {
@@ -78,22 +115,25 @@ h3 {
 
 .group-title {
   font-size: 24px;
-  color: #0077cc;
   margin-top: 20px;
 }
 
 .group-name {
   font-size: 18px;
-  color: #000;
   margin: 10px 0;
 }
 
 ul {
   padding-left: 20px;
   line-height: 1.6;
-  text-align: justify; /* Justifica o texto */
+  text-align: justify;
 }
 
+.intro, p {
+  text-align: justify;
+}
+
+/* ======== Imagens ======== */
 .img-container {
   display: flex;
   gap: 10px;
@@ -113,175 +153,12 @@ ul {
   transform: scale(1.05);
 }
 
-.quiz {
-  margin-top: 20px;
-  background: #eef;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.quiz h3 {
-  color: #004a7c;
-  margin-top: 0;
-}
-
-.quiz button {
-  display: block;
-  margin: 5px;
-  padding: 10px 15px;
-  width: 100%;
-  border: none;
-  background-color: #0077cc;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.quiz button:hover {
-  background-color: #005fa3;
-}
-
-.quiz button.correct {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.quiz button.incorrect {
-  background-color: #f44336;
-  color: white;
-}
-
-.quiz p {
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-.feedback {
-  margin-top: 10px;
-  font-weight: bold;
-  min-height: 24px;
-}
-
 .img-container h4 {
   width: 100%;
   font-size: 16px;
   color: #000;
   margin: 10px 0 5px 0;
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  .container {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  .img-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .img-container img {
-    max-width: 80%;
-  }
-
-  .navigation {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .tab-button {
-    margin: 5px 0;
-  }
-
-  .morfologia-section {
-    display: flex;
-    flex-direction: column; /* Coloca o texto e a imagem em colunas */
-    align-items: center; /* Centraliza o conteúdo */
-    gap: 15px; /* Espaço entre o texto e a imagem */
-  }
-
-  .morfologia-section ul {
-    padding: 0 10px; /* Adiciona espaçamento lateral para o texto */
-    text-align: justify; /* Justifica o texto */
-  }
-
-  .morfologia-image {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
-    height: auto; /* Mantém a proporção da imagem */
-  }
-
-  table {
-    width: 100%; /* Faz a tabela ocupar toda a largura disponível */
-    border-collapse: collapse; /* Remove espaços entre as bordas */
-    font-size: 0.9em; /* Reduz o tamanho da fonte para caber melhor */
-  }
-
-  table th, table td {
-    padding: 8px; /* Adiciona espaçamento interno */
-    text-align: left; /* Alinha o texto à esquerda */
-    word-wrap: break-word; /* Quebra o texto longo em várias linhas */
-  }
-
-  table thead {
-    display: none; /* Esconde o cabeçalho da tabela em telas pequenas */
-  }
-
-  table tr {
-    display: block; /* Cada linha da tabela vira um bloco */
-    margin-bottom: 10px; /* Adiciona espaço entre os blocos */
-  }
-
-  table td {
-    display: flex;
-    justify-content: space-between; /* Alinha o texto em duas colunas */
-    border-bottom: 1px solid #ddd; /* Adiciona uma linha de separação */
-  }
-
-  table td::before {
-    content: attr(data-label); /* Usa os atributos data-label para criar rótulos */
-    font-weight: bold;
-    flex-basis: 40%; /* Define a largura da coluna de rótulos */
-  }
-
-  .mascot-right {
-    position: static; /* Remove o posicionamento absoluto em telas pequenas */
-    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
-    text-align: center; /* Garante que a imagem fique centralizada */
-  }
-
-  .mascot-right .mascot-image {
-    max-width: 100px; /* Reduz o tamanho da imagem em telas menores */
-    height: auto;
-  }
-
-  #crustacea,
-  #hexapoda {
-    padding-top: 20px; /* Reduz o espaçamento superior para evitar grandes lacunas */
-  }
-
-  /* Ajuste para o mascote em telas menores */
-  .mascot-right {
-    position: relative; /* Altera para posicionamento relativo */
-    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
-    text-align: center; /* Garante que a imagem fique centralizada */
-  }
-
-  .mascot-right .mascot-image {
-    max-width: 120px; /* Reduz o tamanho da imagem em telas menores */
-    height: auto;
-  }
-
-  #crustacea,
-  #hexapoda {
-    padding-top: 0; /* Remove o espaçamento superior desnecessário */
-  }
-
-  .content {
-    padding-top: 20px; /* Adiciona um espaçamento interno para o conteúdo */
-  }
 }
 
 .group-image {
@@ -308,6 +185,59 @@ ul {
   margin: 10px 0;
 }
 
+/* ======== Mascote ======== */
+.mascot {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mascot-image {
+  max-width: 150px;
+  height: auto;
+}
+
+.mascot-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  text-align: center;
+}
+
+.mascot-right .mascot-image {
+  max-width: 200px;
+  height: auto;
+}
+
+/* ======== Seções Morfologia ======== */
+.morfologia-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: justify;
+}
+
+.morfologia-section ul {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.morfologia-image {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 10px auto;
+}
+
+.image-description {
+  font-size: 0.8em;
+  color: #555;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* ======== Tabelas ======== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -329,546 +259,159 @@ tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.morfologia-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  text-align: left; /* Alinha o texto à esquerda */
-  text-align: justify; /* Justifica o texto */
+/* ======== Quiz ======== */
+.quiz {
+  margin-top: 20px;
+  background: #eef;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.morfologia-section ul {
-  flex: 1;
-  padding-left: 20px; /* Adiciona recuo para os itens da lista */
+.quiz h3 {
+  color: #004a7c;
+  margin-top: 0;
 }
 
-.morfologia-image {
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
-  display: block; /* Garante que a imagem ocupe uma linha inteira */
-  margin: 10px auto; /* Centraliza apenas a imagem */
+.quiz button {
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  background-color: #0077cc;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 0.9rem;
 }
 
-.image-description {
-  font-size: 0.8em; /* Tamanho menor */
-  color: #555; /* Cor mais suave */
-  text-align: center; /* Centraliza o texto */
-  margin-top: 5px; /* Espaço entre a imagem e o texto */
+.quiz button:hover {
+  background-color: #005fa3;
 }
 
-.intro, p {
-  text-align: justify; /* Justifica o texto */
+.quiz button.correct {
+  background-color: #4CAF50;
 }
 
-.mascot {
-  text-align: center;
-  margin-bottom: 20px;
+.quiz button.incorrect {
+  background-color: #f44336;
 }
 
-.mascot-image {
-  max-width: 150px;
-  height: auto;
+.quiz p {
+  font-weight: bold;
+  margin-top: 15px;
 }
 
-.mascot-right {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
+.feedback {
+  margin-top: 10px;
+  font-weight: bold;
+  min-height: 24px;
 }
 
-.mascot-right .mascot-image {
-  max-width: 150px; /* Ajuste o tamanho conforme necessário */
-  height: auto;
-}
-
-/* Certifique-se de que as abas tenham position: relative */
-#crustacea,
-#hexapoda {
-  position: relative;
-  padding-top: 200px; /* Adiciona espaço no topo para evitar sobreposição */
-}
-
-.mascot-right {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
-
-.mascot-right .mascot-image {
-  max-width: 200px; /* Aumenta o tamanho da imagem */
-  height: auto;
-}
-
-/* Estilos para os títulos da aba Crustacea */
+/* ======== Estilos Específicos para Abas ======== */
+/* Crustacea */
+#crustacea .title-primary,
 .crustacea-title.title-primary {
-  color: #b22222; /* Vermelho escuro para o título principal */
+  color: #b22222;
   font-size: 2.5rem;
 }
-
+#crustacea .title-secondary,
 .crustacea-title.title-secondary {
-  color: #ff6347; /* Tom mais claro de vermelho para os títulos secundários */
+  color: #ff6347;
 }
-
-/* Estilos para os títulos da aba Hexapoda */
-.hexapoda-title.title-primary {
-  color: #ffd700; /* Amarelo ouro para o título principal */
-  font-size: 2.5rem;
-}
-
-.hexapoda-title.title-secondary {
-  color: #ffa500; /* Tom mais alaranjado para os títulos secundários */
-}
-
-/* Estilos para a aba Crustacea */
-#crustacea .title-primary {
-  color: #b22222; /* Vermelho escuro para o título principal */
-}
-
-#crustacea .title-secondary {
-  color: #ff6347; /* Vermelho claro para o título secundário */
-}
-
 #crustacea .group-title,
 #crustacea .group-name {
-  color: #b22222; /* Vermelho escuro para os títulos das seções */
+  color: #b22222;
 }
-
 #crustacea table {
-  border: 2px solid #b22222; /* Borda da tabela em vermelho escuro */
+  border: 2px solid #b22222;
 }
-
 #crustacea table th {
-  background-color: #ff6347; /* Fundo vermelho claro para cabeçalhos */
-  color: white;
+  background-color: #ff6347;
 }
-
 #crustacea table td {
-  border: 1px solid #b22222; /* Borda das células em vermelho escuro */
+  border: 1px solid #b22222;
 }
-
 #crustacea .quiz button {
-  background-color: #ff6347; /* Botões do quiz em vermelho claro */
+  background-color: #ff6347;
   color: white;
   border: 1px solid #b22222;
 }
-
 #crustacea .quiz button:hover {
-  background-color: #b22222; /* Vermelho escuro ao passar o mouse */
+  background-color: #b22222;
 }
 
-/* Estilos para a aba Hexapoda */
-#hexapoda .title-primary {
-  color: #ffd700; /* Amarelo ouro para o título principal */
+/* Hexapoda */
+#hexapoda .title-primary,
+.hexapoda-title.title-primary {
+  color: #d4a017;
+  font-size: 2.5rem;
 }
-
-#hexapoda .title-secondary {
-  color: #ffa500; /* Amarelo alaranjado para o título secundário */
+#hexapoda .title-secondary,
+.hexapoda-title.title-secondary {
+  color: #b8860b;
 }
-
 #hexapoda .group-title,
 #hexapoda .group-name {
-  color: #d4a017; /* Amarelo terroso para os títulos das seções */
+  color: #d4a017;
 }
-
 #hexapoda table {
-  border: 2px solid #d4a017; /* Borda da tabela em amarelo terroso */
+  border: 2px solid #d4a017;
 }
-
 #hexapoda table th {
-  background-color: #b8860b; /* Fundo amarelo dourado escuro para cabeçalhos */
-  color: white;
+  background-color: #b8860b;
 }
-
 #hexapoda table td {
-  border: 1px solid #d4a017; /* Borda das células em amarelo terroso */
+  border: 1px solid #d4a017;
 }
-
 #hexapoda .quiz button {
-  background-color: #b8860b; /* Botões do quiz em amarelo dourado escuro */
+  background-color: #b8860b;
   color: white;
   border: 1px solid #d4a017;
 }
-
 #hexapoda .quiz button:hover {
-  background-color: #d4a017; /* Amarelo terroso ao passar o mouse */
+  background-color: #d4a017;
 }
 
-/* Estilos para a aba Hexapoda com tons mais fortes */
-#hexapoda .title-primary {
-  color: #ffcc00; /* Amarelo forte para o título principal */
-}
-
-#hexapoda .title-secondary {
-  color: #ff9900; /* Amarelo alaranjado mais forte para o título secundário */
-}
-
-#hexapoda .group-title,
-#hexapoda .group-name {
-  color: #ffcc00; /* Amarelo forte para os títulos das seções */
-}
-
-/* Estilos para a aba Hexapoda com tons de amarelo terroso */
-#hexapoda .title-primary {
-  color: #d4a017; /* Amarelo terroso para o título principal */
-}
-
-#hexapoda .title-secondary {
-  color: #b8860b; /* Amarelo dourado escuro para o título secundário */
-}
-
-#hexapoda .group-title,
-#hexapoda .group-name {
-  color: #d4a017; /* Amarelo terroso para os títulos das seções */
-}
-
-/* Botão ativo para Crustacea */
-#btn-crustacea {
-  background-color: #b22222; /* Vermelho escuro */
-  color: white;
-  border: 2px solid #b22222;
-}
-
-#btn-crustacea:hover {
-  background-color: #ff6347; /* Vermelho claro ao passar o mouse */
-  border-color: #ff6347;
-}
-
-/* Botão ativo para Hexapoda */
-#btn-hexapoda {
-  background-color: #ffcc00; /* Amarelo forte */
-  color: black;
-  border: 2px solid #ffcc00;
-}
-
-#btn-hexapoda:hover {
-  background-color: #ff9900; /* Amarelo alaranjado ao passar o mouse */
-  border-color: #ff9900;
-}
-
-/* Botão inativo */
-.tab-button {
-  background-color: #f0f0f0; /* Cinza claro */
-  color: black;
-  border: 2px solid #ccc;
-}
-
-.tab-button:hover {
-  background-color: #ddd; /* Cinza mais escuro ao passar o mouse */
-}
-
-/* Estilos para a aba Game */
+/* Game */
 #game {
   position: relative;
   padding-top: 200px;
 }
-
 #game .title-primary {
-  color: #006400; /* Verde escuro */
+  color: #006400;
   font-size: 2.5rem;
 }
-
 #game .title-secondary {
-  color: #228B22; /* Verde floresta */
+  color: #228B22;
 }
-
 #game .group-title,
 #game .group-name {
   color: #006400;
 }
-
-/* Botão padrão da aba Game */
-#btn-game {
-  background-color: #006400; /* Verde escuro */
-  color: white;
-  border: 2px solid #006400;
-}
-
-/* Botão hover da aba Game */
-#btn-game:hover {
-  background-color: #228B22; /* Verde floresta ao passar o mouse */
-  border-color: #228B22;
-}
-
-/* Botão ativo da aba Game */
 #btn-game.tab-button {
   background-color: #006400;
   color: white;
   border: 2px solid #006400;
 }
-
 #btn-game.tab-button:hover {
   background-color: #228B22;
   border-color: #228B22;
 }
-.memory-game {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 30px;
-}
 
-.memory-card {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background-color: #f0f0f0;
-  border: 2px solid #006400;
-  border-radius: 10px;
-  cursor: pointer;
-  perspective: 1000px;
-}
-
-.memory-card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-
-.memory-card.flipped .memory-card-inner {
-  transform: rotateY(180deg);
-}
-
-.memory-card-front, .memory-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.memory-card-front {
-  background-color: #fff;
-}
-
-.memory-card-back {
-  background-color: #006400;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-.memory-card img {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.memory-game {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.memory-card {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background-color: #006400; /* fundo verde escuro */
-  border: 3px solid #ffffff; /* borda branca */
-  border-radius: 10px;
-  cursor: pointer;
-  perspective: 1000px;
-}
-
-.memory-card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-
-.memory-card.flipped .memory-card-inner {
-  transform: rotateY(180deg);
-}
-
-.memory-card-front,
-.memory-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.memory-card-front {
-  background-image: url('fundo2.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.memory-card-back {
-  background-color: #ffffff; /* conteúdo branco */
-  color: #000000;
-  transform: rotateY(180deg);
-}
-
-.memory-card img {
-  max-width: 100px;
-  max-height: 100px;
-}
-.puzzle-game {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-  margin-top: 20px;
-  justify-content: center;
-}
-
-.puzzle-tile {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  border: 2px solid #006400;
-  box-sizing: border-box;
-}
-
-.puzzle-tile.empty {
-  background: #ccc;
-}
-
-.puzzle-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  justify-items: center;
-}
-
-.puzzle-grid img {
-  max-width: 100px;
-  cursor: move;
-}
-/* Ajustes para o quebra-cabeça do lagostim */
-.puzzle-game {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0; /* Remove completamente o espaçamento entre as peças */
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0; /* Remove qualquer padding extra */
-}
-
-.puzzle-piece {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border: none;
-  margin: 0; /* Remove margens */
-  padding: 0; /* Remove paddings */
-  display: block; /* Garante que não haja espaçamento extra */
-}
-
-.puzzle-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px; /* Espaço reduzido entre o puzzle e o botão */
-  margin-bottom: 20px; /* Reduz a margem inferior */
-}
-
-/* Ajustes específicos para o quebra-cabeça */
-#puzzle-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0;
-  border: none;
-}
-
-.puzzle-piece {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-  display: block;
-  border: none;
-  cursor: pointer;
-}
-
-#puzzle-controls {
-  margin-top: 10px;
-  text-align: center;
-}
-
-#reset-puzzle {
-  padding: 8px 16px;
-  margin-top: 5px;
-}
-
-.puzzle-piece-container {
-  width: 100px;
-  height: 100px;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-@media (max-width: 480px) {
-  .puzzle-game,
-  #puzzle-container {
-    grid-template-columns: repeat(3, 1fr);
-    width: 100vw;
-    gap: 0;
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  .puzzle-piece,
-  .puzzle-piece-container {
-    width: 30vw;
-    height: 30vw;
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
-    border: none;
-    display: block;
-    touch-action: manipulation;
-  }
-
-  .puzzle-wrapper {
-    overflow-x: hidden;
-  }
-}
-
-  #reset-puzzle {
-    width: 100%;
-    font-size: 1rem;
-  }
-}
-
-/* Jogo da memória com 4 colunas fixas */
+/* ======== Memory Game ======== */
 .memory-game {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .memory-card {
+  position: relative;
   width: 100px;
   height: 100px;
   background-color: #006400;
@@ -876,7 +419,6 @@ tr:nth-child(even) {
   border-radius: 10px;
   cursor: pointer;
   perspective: 1000px;
-  position: relative;
 }
 
 .memory-card-inner {
@@ -923,13 +465,28 @@ tr:nth-child(even) {
   max-height: 80px;
 }
 
-.quiz button {
-  font-size: 0.9rem;
-  padding: 10px;
+/* ======== Puzzle Game ======== */
+.puzzle-game,
+#puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
 }
 
 .puzzle-piece,
 .puzzle-piece-container {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: none;
+  cursor: pointer;
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
@@ -938,24 +495,105 @@ tr:nth-child(even) {
   touch-action: manipulation;
 }
 
-.puzzle-piece {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-  display: block;
-  border: none;
-  cursor: grab;
-  user-select: none;
-  -webkit-user-drag: auto;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  touch-action: manipulation;
+.puzzle-piece img {
+  pointer-events: none;
 }
 
+.puzzle-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  overflow-x: hidden;
+}
+
+#puzzle-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#reset-puzzle {
+  padding: 8px 16px;
+  margin-top: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* ======== Media Queries ======== */
 @media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+  .img-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-container img {
+    max-width: 80%;
+  }
+  .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+  .tab-button {
+    margin: 5px 0;
+  }
+  .morfologia-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .morfologia-section ul {
+    padding: 0 10px;
+  }
+  .morfologia-image {
+    max-width: 100%;
+    height: auto;
+  }
+  table {
+    width: 100%;
+    font-size: 0.9em;
+  }
+  table th, table td {
+    padding: 8px;
+    text-align: left;
+    word-wrap: break-word;
+  }
+  table thead {
+    display: none;
+  }
+  table tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+  table td {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+  }
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex-basis: 40%;
+  }
+  .mascot-right {
+    position: static;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+  .mascot-right .mascot-image {
+    max-width: 120px;
+    height: auto;
+  }
+  #crustacea,
+  #hexapoda {
+    padding-top: 0;
+  }
+  .content {
+    padding-top: 20px;
+  }
   .puzzle-game,
   #puzzle-container {
     grid-template-columns: repeat(3, 1fr);
@@ -963,21 +601,12 @@ tr:nth-child(even) {
     gap: 2px;
     margin: 0 auto;
   }
-
   .puzzle-piece,
   .puzzle-piece-container {
     width: 30vw;
     height: 30vw;
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
-    border: none;
-    display: block;
-    touch-action: manipulation;
   }
-
   .puzzle-wrapper {
-    overflow-x: hidden;
     width: 100%;
     padding: 0 5px;
   }
@@ -991,7 +620,6 @@ tr:nth-child(even) {
     gap: 2px;
     margin: 0 auto;
   }
-
   .puzzle-piece,
   .puzzle-piece-container {
     width: 30vw;
