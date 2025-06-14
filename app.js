@@ -1,19 +1,19 @@
-// Torna openTab acessível no HTML
+// Função global para troca de abas
 function openTab(id) {
+  // Esconde todas as abas
   document.querySelectorAll('.content').forEach(content => {
     content.classList.remove('active');
   });
+  // Remove 'active' de todos os botões
   document.querySelectorAll('.tab-button').forEach(button => {
     button.classList.remove('active');
   });
 
+  // Ativa a aba e o botão corretos
   const content = document.getElementById(id);
   const button = document.getElementById(`btn-${id}`);
-
-  if (content && button) {
-    content.classList.add('active');
-    button.classList.add('active');
-  }
+  if (content) content.classList.add('active');
+  if (button) button.classList.add('active');
 }
 
 // Função para quiz
