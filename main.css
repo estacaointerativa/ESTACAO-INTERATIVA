@@ -435,7 +435,7 @@ tr:nth-child(even) {
   grid-template-columns: repeat(5, 1fr);
   gap: 0;
   width: 100%;
-  max-width: 250px;
+  max-width: 350px;
   margin: 0 auto;
   padding: 0;
   border: none;
