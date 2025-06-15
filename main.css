@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 1200px;
   margin: 20px auto;
@@ -470,7 +474,7 @@ tr:nth-child(even) {
   grid-template-columns: repeat(5, 1fr);
   gap: 0;
   width: 100%;
-  max-width: 500px;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 0;
   border: none;
@@ -481,8 +485,8 @@ tr:nth-child(even) {
 .puzzle-piece-container {
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 100px;
-  max-height: 100px;
+  max-width: unset;
+  max-height: unset;
   object-fit: cover;
   margin: 0;
   padding: 0;
