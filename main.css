@@ -1,15 +1,13 @@
-body {
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   background: url('fundo2.png') no-repeat center center fixed;
   background-size: cover;
-  margin: 0;
-  padding: 0;
 }
 
-html {
-  overflow-x: hidden;
-}
-
+/* ======== Layout Principal ======== */
 .container {
   max-width: 1200px;
   margin: 20px auto;
@@ -49,35 +47,29 @@ html {
   transform: translateY(0);
 }
 
-/* Botões específicos */
 #btn-crustacea {
   background-color: #b22222;
   color: white;
   border: 2px solid #b22222;
 }
-
 #btn-crustacea:hover {
   background-color: #ff6347;
   border-color: #ff6347;
 }
-
 #btn-hexapoda {
   background-color: #ffcc00;
   color: black;
   border: 2px solid #ffcc00;
 }
-
 #btn-hexapoda:hover {
   background-color: #ff9900;
   border-color: #ff9900;
 }
-
 #btn-game {
   background-color: #006400;
   color: white;
   border: 2px solid #006400;
 }
-
 #btn-game:hover {
   background-color: #228B22;
   border-color: #228B22;
@@ -91,7 +83,6 @@ html {
   transition: opacity 0.5s ease;
   text-align: justify;
 }
-
 .content.active {
   display: block;
   opacity: 1;
@@ -145,18 +136,15 @@ ul {
   margin: 10px 0;
   justify-content: center;
 }
-
 .img-container img {
   width: 100%;
   max-width: 150px;
   border-radius: 10px;
   transition: transform 0.3s;
 }
-
 .img-container img:hover {
   transform: scale(1.05);
 }
-
 .img-container h4 {
   width: 100%;
   font-size: 16px;
@@ -164,7 +152,6 @@ ul {
   margin: 10px 0 5px 0;
   text-align: center;
 }
-
 .group-image {
   display: block;
   margin: 0 auto 15px auto;
@@ -174,16 +161,13 @@ ul {
   cursor: pointer;
   transition: transform 0.2s;
 }
-
 .group-image:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .group {
   text-align: left;
 }
-
 .group img {
   display: block;
   margin: 10px 0;
@@ -194,18 +178,15 @@ ul {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .mascot-image {
   max-width: 150px;
   height: auto;
 }
-
 .mascot-right {
   position: static !important;
   margin: 0 auto 20px auto;
   text-align: center;
 }
-
 .mascot-right .mascot-image {
   max-width: 120px;
   height: auto;
@@ -218,12 +199,10 @@ ul {
   gap: 20px;
   text-align: justify;
 }
-
 .morfologia-section ul {
   flex: 1;
   padding-left: 20px;
 }
-
 .morfologia-image {
   max-width: 300px;
   height: auto;
@@ -231,7 +210,6 @@ ul {
   display: block;
   margin: 10px auto;
 }
-
 .image-description {
   font-size: 0.8em;
   color: #555;
@@ -245,18 +223,15 @@ table {
   border-collapse: collapse;
   margin-top: 20px;
 }
-
 th, td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
-
 th {
   background-color: #0077cc;
   color: white;
 }
-
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
@@ -268,12 +243,10 @@ tr:nth-child(even) {
   padding: 15px;
   border-radius: 10px;
 }
-
 .quiz h3 {
   color: #004a7c;
   margin-top: 0;
 }
-
 .quiz button {
   display: block;
   margin: 5px;
@@ -288,24 +261,19 @@ tr:nth-child(even) {
   transition: background-color 0.3s;
   font-size: 0.9rem;
 }
-
 .quiz button:hover {
   background-color: #005fa3;
 }
-
 .quiz button.correct {
   background-color: #4CAF50;
 }
-
 .quiz button.incorrect {
   background-color: #f44336;
 }
-
 .quiz p {
   font-weight: bold;
   margin-top: 15px;
 }
-
 .feedback {
   margin-top: 10px;
   font-weight: bold;
@@ -411,7 +379,6 @@ tr:nth-child(even) {
   justify-content: center;
   margin-top: 30px;
 }
-
 .memory-card {
   position: relative;
   width: 100px;
@@ -422,7 +389,6 @@ tr:nth-child(even) {
   cursor: pointer;
   perspective: 1000px;
 }
-
 .memory-card-inner {
   width: 100%;
   height: 100%;
@@ -430,11 +396,9 @@ tr:nth-child(even) {
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
-
 .memory-card.flipped .memory-card-inner {
   transform: rotateY(180deg);
 }
-
 .memory-card-front,
 .memory-card-back {
   position: absolute;
@@ -449,19 +413,16 @@ tr:nth-child(even) {
   font-size: 0.8rem;
   text-align: center;
 }
-
 .memory-card-front {
   background-image: url('fundo2.png');
   background-size: cover;
   background-position: center;
 }
-
 .memory-card-back {
   background-color: #ffffff;
   color: #000000;
   transform: rotateY(180deg);
 }
-
 .memory-card img {
   max-width: 80px;
   max-height: 80px;
@@ -474,19 +435,16 @@ tr:nth-child(even) {
   grid-template-columns: repeat(5, 1fr);
   gap: 0;
   width: 100%;
-  max-width: 100vw;
+  max-width: 500px;
   margin: 0 auto;
   padding: 0;
   border: none;
   box-sizing: border-box;
 }
-
 .puzzle-piece,
 .puzzle-piece-container {
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: unset;
-  max-height: unset;
   object-fit: cover;
   margin: 0;
   padding: 0;
@@ -494,7 +452,6 @@ tr:nth-child(even) {
   border: none;
   box-sizing: border-box;
 }
-
 .puzzle-wrapper {
   display: flex;
   flex-direction: column;
@@ -503,12 +460,10 @@ tr:nth-child(even) {
   margin-bottom: 20px;
   overflow-x: hidden;
 }
-
 #puzzle-controls {
   margin-top: 10px;
   text-align: center;
 }
-
 #reset-puzzle {
   padding: 8px 16px;
   margin-top: 5px;
@@ -590,71 +545,31 @@ tr:nth-child(even) {
   .content {
     padding-top: 20px;
   }
-  
-  @media (max-width: 768px) {
   .puzzle-game,
   #puzzle-container {
-    grid-template-columns: repeat(5, 1fr);
-    width: 100vw;
-    gap: 0; /* Remova o espaço entre as peças */
-    margin: 0 auto;
-  }
-  .puzzle-piece,
-  .puzzle-piece-container {
-    width: 20vw;
-    height: 20vw;
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 100vw;
   }
 }
 
+/* Celular pequeno */
 @media (max-width: 480px) {
   .puzzle-game,
   #puzzle-container {
-    grid-template-columns: repeat(5, 1fr);
-    width: 100vw;
-    gap: 0; /* Remova o espaço entre as peças */
-    margin: 0 auto;
+    max-width: 100vw;
   }
   .puzzle-piece,
   .puzzle-piece-container {
-    width: 20vw;
-    height: 20vw;
-    max-width: 80px;
-    max-height: 80px;
+    max-width: unset;
+    max-height: unset;
   }
 }
-  
-*, *::before, *::after { box-sizing: border-box; }
 
-.puzzle-game,
-#puzzle-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 0;
-  border: none;
-}
-
-.puzzle-piece,
-.puzzle-piece-container {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 100px;
-  max-height: 100px;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-  display: block;
-  border: none;
-}
-
+/* Ajuste extra para garantir responsividade total */
 @media (max-width: 600px) {
   .puzzle-game,
   #puzzle-container {
     max-width: 100vw;
   }
 }
+
+*, *::before, *::after { box-sizing: border-box; }
