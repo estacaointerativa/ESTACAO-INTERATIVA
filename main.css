@@ -587,3 +587,7 @@ tr:nth-child(even) {
 #jogos-turma ul, #jogos-turma ol {
   margin-bottom: 18px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+}
